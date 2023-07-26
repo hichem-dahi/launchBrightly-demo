@@ -6,6 +6,8 @@ Key files:
 ``` @/views/HomeView.vue  ``` 
 ``` @/App.vue  ``` 
 
+Link: http://launchbrightly-demo.s3-website-us-east-1.amazonaws.com/
+
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
