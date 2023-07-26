@@ -118,7 +118,12 @@ function sortAccordingToLatestDates() {
 
 
  onMounted(async() => {
-  baremetricsData.value = await baremetricsRequests.getBaremetrics()
+  try {
+    baremetricsData.value = await baremetricsRequests.getBaremetrics()
+  } catch(e) {
+    console.error(e)  
+    return
+  }
   features.value = baremetricsData.value.features.items 
   //GET unique editions names to filter with
   const editionItems = features.value.map(item => item.FeatureEditions.items)

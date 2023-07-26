@@ -1,9 +1,9 @@
 import type { IBaremetrics } from "@/models/models";
 import axios from "axios";
-axios.defaults.baseURL = `https://content.launchbrightly.com/lbdemo`;
+axios.defaults.baseURL = `${import.meta.env.VITE_APP_API_URL}`;
 
 export default {
   async getBaremetrics(): Promise<IBaremetrics>{
-    return await axios.get('/baremetrics.json').then(res=> res.data).catch(e=> console.log(e))
+    return await axios.get('/baremetrics.json').then(res=> res.data)
   }
 }
