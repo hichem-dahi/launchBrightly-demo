@@ -1,6 +1,7 @@
 # launchBrightly
-Show sortable and filtrable table of features.
-Columns: Id, Name, Description, Number of screenshots, Latest capture, Editions.
+Show sortable and filtrable table of features.\
+Columns: \
+```Id, Name, Description, Number of screenshots, Latest capture, Editions.```
 
 Key files: 
 ``` @/components/TableVue.vue  ``` 
