@@ -136,9 +136,9 @@ function sortAccordingToLatestDates() {
 
 <template>
   <div>
-    <div class="text-2xl mb-12 ml-4">Liste of features</div>
+    <div class="text-2xl mb-12 ml-4 text-slate-700 underline underline-offset-8">Liste of features</div>
     <div class="flex flex-row items-start">
-      <table class="border border-purple-500 bg-purple-50">
+      <table>
         <thead>
           <tr>
             <th @click="setSort(featuresFields.Id)" class="headers">
@@ -181,12 +181,12 @@ function sortAccordingToLatestDates() {
                 </span>
               </div>
             </th>
-            <th class="border border-purple-500">
+            <th class="headers">
               <div>Editions</div>
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="text-slate-500">
           <tr v-for="feature in sortableFeatures" :key="feature.id">
             <td class="border border-slate-300 text-center p-3">{{ feature.id }}</td> 
             <td class="border border-slate-300 text-center p-3">{{ feature.name }}</td> 
@@ -217,8 +217,10 @@ function sortAccordingToLatestDates() {
 <style scoped>
 .headers {
   white-space: nowrap;
-  padding: 1rem;
-  border-width: 1px;
-  border-color: #8c17da;
+  color: white;
+  padding: 0.75rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: rgba(161, 33, 211, 0.6)
 }
 </style>
