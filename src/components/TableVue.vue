@@ -142,43 +142,48 @@ function sortAccordingToLatestDates() {
         <thead>
           <tr>
             <th @click="setSort(featuresFields.Id)" class="headers">
-              <div class="flex">
+              <div class="flex justify-between">
                 <div>Id</div> 
                 <span v-if="sort.field === featuresFields.Id" class="material-symbols-outlined">
                 {{ sort.direction === sortDirection.ASC ? 'arrow_drop_down' : 'arrow_drop_up'}}
                 </span>
+                <div v-else class="w-6"></div>
               </div>
             </th>
             <th @click="setSort(featuresFields.Name)" class="headers">
-              <div class="flex">
+              <div class="flex justify-between">
                 <div>Name</div> 
                 <span v-if="sort.field === featuresFields.Name"  class="material-symbols-outlined">
                 {{ sort.direction === sortDirection.ASC ? 'arrow_drop_down' : 'arrow_drop_up'}}
                 </span>
+                <div v-else class="w-6"></div>
               </div>
             </th>
             <th @click="setSort(featuresFields.Description)" class="headers">
-              <div class="flex">
+              <div class="flex justify-between">
                 <div>Description</div>
                 <span v-if="sort.field === featuresFields.Description" class="material-symbols-outlined">
                 {{ sort.direction === sortDirection.ASC ? 'arrow_drop_down' : 'arrow_drop_up'}}
                 </span>
+                <div v-else class="w-6"></div>
             </div>
             </th>
             <th @click="setSort(featuresFields.Screenshots)" class="headers">
-              <div class="flex">
+              <div class="flex justify-between">
                 <div>Number of screenshots</div>
                 <span v-if="sort.field === featuresFields.Screenshots" class="material-symbols-outlined">
                 {{ sort.direction === sortDirection.ASC ? 'arrow_drop_down' : 'arrow_drop_up'}}
                 </span>
-            </div>
+                <div v-else class="w-6"></div>
+              </div>
             </th>
             <th @click="setSort(featuresFields.TimeOfCapture)" class="headers">
-              <div class="flex">
+              <div class="flex justify-between">
                 <div>Latest capture</div>
                 <span v-if="sort.field === featuresFields.TimeOfCapture" class="material-symbols-outlined">
                 {{ sort.direction === sortDirection.ASC ? 'arrow_drop_down' : 'arrow_drop_up'}}
                 </span>
+                <div v-else class="w-6"></div>
               </div>
             </th>
             <th class="headers">
@@ -197,17 +202,15 @@ function sortAccordingToLatestDates() {
           </tr>
         </tbody>
       </table>
-      <div class="ml-6">
-        <div>
-          <label class="font-bold" for="edition">Filter editions</label>
-          <div class="flex items-center">
-            <select class="border border-purple-500 my-3" v-model="selectedFilter" name="edition">
-              <option v-for="(editionFilter,i) in editionFilters" :key="i" :value="editionFilter">{{ editionFilter }}</option>
-            </select>
-            <button class="flex items-center mx-3" @click="selectedFilter = ''">
-              <span class="material-symbols-outlined text-[1.25rem]">close</span>
-            </button>
-          </div>
+      <div class="px-6 py-2">
+        <label class="font-bold text-slate-600 ml-2" for="edition">Filter editions</label>
+        <div class="flex items-center">
+          <select class="my-3 p-2 px-3 rounded-full" v-model="selectedFilter" name="edition">
+            <option v-for="(editionFilter,i) in editionFilters" :key="i" :value="editionFilter">{{ editionFilter }}</option>
+          </select>
+          <button class="flex items-center ml-4" @click="selectedFilter = ''">
+            <span class="material-symbols-outlined text-[1.40rem]">close</span>
+          </button>
         </div>
       </div>
     </div>
@@ -221,6 +224,6 @@ function sortAccordingToLatestDates() {
   padding: 0.75rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background-color: rgba(161, 33, 211, 0.6)
+  background-color: rgba(161, 33, 211, 0.60)
 }
 </style>

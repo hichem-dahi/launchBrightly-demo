@@ -5,7 +5,7 @@ import TableVue from "@/components/TableVue.vue";
 
 <template>
   <div class="flex justify-center items-center my-24">
-    <TableVue class="w-2/3"/>
+    <TableVue class="w-3/4"/>
   </div>
 </template>
 
